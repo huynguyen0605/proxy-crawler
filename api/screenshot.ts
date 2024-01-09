@@ -22,11 +22,15 @@ export default async function getTitle(req: any, res: any) {
     });
   }
 
+  console.log("huynvq::========>isProd", isProd);
+
   const page = await browser.newPage();
 
   await page.setViewport({ width: 600, height: 600 });
 
   await page.goto("https://www.google.com");
+
+  console.log("huynvq::========>isProd", await page.title());
 
   await browser.close();
   // Set the s-maxage property which caches the images then on the Vercel edge
@@ -44,5 +48,6 @@ export default async function getTitle(req: any, res: any) {
     "Access-Control-Allow-Headers",
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   );
+  res.statusCode = 200;
   res.send(await page.title());
 }
