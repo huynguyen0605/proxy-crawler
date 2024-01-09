@@ -31,8 +31,6 @@ export default async function getTitle(req: any, res: any) {
   await page.goto("https://www.google.com");
 
   console.log("huynvq::========>isProd", await page.title());
-
-  await browser.close();
   // Set the s-maxage property which caches the images then on the Vercel edge
   res.setHeader("Cache-Control", "s-maxage=10, stale-while-revalidate");
   res.setHeader("Content-Type", "image/png");
@@ -50,4 +48,6 @@ export default async function getTitle(req: any, res: any) {
   );
   res.statusCode = 200;
   res.send(await page.title());
+
+  await browser.close();
 }
