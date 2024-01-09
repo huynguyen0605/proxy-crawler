@@ -2,15 +2,12 @@
   "name": "puppeteer-vercel",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": "^14"
   },
   "dependencies": {
     "chrome-aws-lambda": "^6",
@@ -19,5 +16,8 @@
   },
   "devDependencies": {
     "puppeteer": "^16.2.0"
+  },
+  "engines": {
+    "node": "^18"
   }
 }
